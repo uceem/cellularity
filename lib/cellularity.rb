@@ -1,7 +1,6 @@
 require "cellularity/version"
 
 require 'cellularity/esn'
-require 'cellularity/mdn'
 require 'cellularity/imei'
 require 'cellularity/iccid'
 
