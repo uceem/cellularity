@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Cellularity::VERSION
   spec.authors       = ["johnotander"]
   spec.email         = ["johnotander@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = %q{Determine whether a string is an ICCID, IMEI, ESN, or MDN.}
+  spec.summary       = %q{Determine whether a string is an ICCID, IMEI, ESN, or MDN.}
+  spec.homepage      = "https://www.github.com/johnotander/cellularity"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
@@ -18,6 +18,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
+  spec.add_development_dependency "rspec"
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
 end

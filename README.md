@@ -1,12 +1,14 @@
 # Cellularity
 
-TODO: Write a gem description
+Determine whether a string is an ICCID, IMEI, ESN, or MDN.}
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'cellularity'
+```ruby
+gem 'cellularity'
+```
 
 And then execute:
 
