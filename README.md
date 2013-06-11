@@ -1,6 +1,6 @@
 # Cellularity
 
-Determine whether a string is an ICCID, IMEI, ESN, or MDN.}
+Determine whether a string is an ICCID, IMEI, or ESN.
 
 ## Installation
 
