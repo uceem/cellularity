@@ -8,7 +8,9 @@ module Cellularity
     end
 
     def valid?
-      [15, 16].include?(self.imei.length) && self.imei =~ /\d+/
+      [15, 16].include?(self.imei.length) && !!Integer(self.imei)
+    rescue ArgumentError, TypeError
+      false
     end
   end
 end

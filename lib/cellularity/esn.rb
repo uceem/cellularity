@@ -15,7 +15,9 @@ module Cellularity
     end
 
     def is_valid_decimal?
-      self.esn =~ /\d+/
+      !!Integer(self.esn)
+    rescue ArgumentError, TypeError
+      false
     end
 
     def is_valid_hexadecimal_with_prefix?
