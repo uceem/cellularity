@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Cellularity::Esn do
 
-  let (:invalid_esn) { ['blah', 12345, :abcdfeghj]  }
+  let(:invalid_esn)  { ['blah', 12345, :abcdfeghj, '0x123456'] }
   let(:valid_esn)    { [12345678909, '0xabc12345', 'abc12345']   }
 
   it 'should think that valid esns are, in fact, valid' do

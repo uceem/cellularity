@@ -9,17 +9,21 @@ module Cellularity
 
     def valid?
       return is_valid_decimal? if self.esn.length == 11
-      return is_valid_hexadecimal? if [8, 10].include?(self.esn.length)
+      return is_valid_hexadecimal_with_prefix? if self.esn.length == 10
+      return is_valid_hexadecimal_without_prefix? if self.esn.length == 8
       false
     end
 
     def is_valid_decimal?
-      self.esn =~ /\d+/ && self.esn.to_i.to_s.length == 11
+      self.esn =~ /\d+/
     end
 
-    def is_valid_hexadecimal?
-      return self.esn =~ /0x[\h]+/i if self.esn.length == 10
-      self.esn =~ /\h+/i
+    def is_valid_hexadecimal_with_prefix?
+      self.esn =~ /0x[\h]+/i
+    end
+
+    def is_valid_hexadecimal_without_prefix?
+      self.esn =~ /\h+/i && !self.esn.include?('0x')
     end
   end
 end
