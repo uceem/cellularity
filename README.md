@@ -28,8 +28,8 @@ esn = '0xabc12345'           # The ESN class can also handle hex.
 iccid = 12345678901234567890
 
 ## Validate your values:
-Cellularity::Esn.new(esn).valid?  # => true
-Cellularity::Esn.new(imei).valid? # => false
+Cellularity::Esn.new(esn).valid?     # => true
+Cellularity::Esn.new(imei).valid?    # => false
 Cellularity::Iccid.new(iccid).valid? # => true
 ```
 
