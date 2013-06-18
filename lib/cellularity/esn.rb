@@ -15,7 +15,8 @@ module Cellularity
     end
 
     def is_valid_decimal?
-      !!Integer(self.esn)
+      # Remove leading zeros so Integer doesn't think it's an octal.
+      !!Integer(self.esn.gsub(/^0+/, ''))
     rescue ArgumentError, TypeError
       false
     end
