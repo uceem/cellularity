@@ -5,6 +5,7 @@ describe Cellularity do
   let(:esn)   { '0xabc12345'         }
   let(:imei)  { '123456789012345'    }
   let(:iccid) { 12345678901234567890 }
+  let(:min)   { 1234567890           }
   let(:nada)  { :not_an_id           }
 
   context 'when an esn' do
@@ -34,6 +35,16 @@ describe Cellularity do
 
     it 'should return an Iccid object' do
       Cellularity.parse_id(iccid).is_a?(Cellularity::Iccid).should be_true
+    end
+  end
+
+  context 'when an min' do
+    it 'should think it is an min' do
+      Cellularity.determine_id_type(min).should == :min
+    end
+
+    it 'should return an Min object' do
+      Cellularity.parse_id(min).is_a?(Cellularity::Min).should be_true
     end
   end
 end
