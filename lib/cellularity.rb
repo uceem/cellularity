@@ -10,6 +10,7 @@ module Cellularity
     return :esn   if Cellularity::Esn.new(id).valid?
     return :imei  if Cellularity::Imei.new(id).valid?
     return :iccid if Cellularity::Iccid.new(id).valid?
+    return :min   if Cellularity::Min.new(id).valid?
   end
 
   def self.parse_id(id)
@@ -17,6 +18,7 @@ module Cellularity
     when :esn   then Cellularity::Esn.new(id)
     when :imei  then Cellularity::Imei.new(id)
     when :iccid then Cellularity::Iccid.new(id)
+    when :min   then Cellularity::Min.new(id)
     else nil
     end
   end
