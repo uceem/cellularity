@@ -18,6 +18,7 @@ module Cellularity
     when :esn   then Cellularity::Esn.new(id)
     when :imei  then Cellularity::Imei.new(id)
     when :iccid then Cellularity::Iccid.new(id)
+    when :min   then Cellularity::Min.new(id)
     else nil
     end
   end
