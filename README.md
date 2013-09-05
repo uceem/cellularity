@@ -26,11 +26,18 @@ Or install it yourself as:
 imei = 123456789012345       # It can be a string or a number
 esn = '0xabc12345'           # The ESN class can also handle hex.
 iccid = 12345678901234567890
+min = 1234567890
 
 ## Validate your values:
 Cellularity::Esn.new(esn).valid?     # => true
 Cellularity::Esn.new(imei).valid?    # => false
 Cellularity::Iccid.new(iccid).valid? # => true
+Cellularity::Min.new(min).valid?     # => true
+Cellularity::Min.new(:invalid).valid?   # => false
+
+# Dynamically determine your id type:
+Cellularity.determine_id_type(esn)   # => :esn
+Cellularity.determine_id_type(iccid) # => :iccid
 ```
 
 ## Contributing
